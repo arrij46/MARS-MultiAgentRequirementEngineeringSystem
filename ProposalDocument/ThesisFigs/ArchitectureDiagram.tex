@@ -1,0 +1,42 @@
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[node distance=1.5cm]
+
+% (Minimal fallback styles in case they're not in the preamble)
+\tikzstyle{block} = [rectangle, draw, fill=blue!15, text centered, rounded corners, minimum height=2em, minimum width=6cm]
+\tikzstyle{line} = [draw, thick, -latex']
+\tikzstyle{side} = [rectangle, draw, fill=green!15, text centered, rounded corners, minimum height=2em, minimum width=3cm]
+
+% Main pipeline
+\node [block] (input) {User Input (Text / Document Upload)};
+\node [block, below of=input] (elicitation) {Conversational Requirement Elicitation \& Drafting};
+\node [block, below of=elicitation] (quality) {Requirement Quality Assurance};
+\node [block, below of=quality] (refinement) {Requirement Refinement \& Categorization};
+\node [block, below of=refinement] (userstories) {User Story Generation};
+\node [block, below of=userstories] (srs) {SRS Document Generation \& Editing};
+\node [block, below of=srs] (output) {Final Outputs (SRS Docs, User Stories)};
+
+% Arrows (pipes) with labels
+\path [line] (input) -- node[midway,right]{Raw Requirements} (elicitation);
+\path [line] (elicitation) -- node[midway,right]{Drafted Requirements} (quality);
+\path [line] (quality) -- node[midway,right]{Validated Requirements} (refinement);
+\path [line] (refinement) -- node[midway,right]{Refined \& Categorized Requirements} (userstories);
+\path [line] (userstories) -- node[midway,right]{User Stories + Requirements} (srs);
+\path [line] (srs) -- node[midway,right]{Finalized SRS / Export} (output);
+
+% Side components (placed using explicit coordinates relative to pipeline nodes)
+\node [side] (frontend) at ($(elicitation.east)+(4cm,0)$) {Frontend (React.js Web UI)};
+\node [side] (backend)  at ($(quality.east)+(4cm,0)$)     {Backend (Python/Flask or FastAPI)};
+\node [side] (ai)       at ($(refinement.east)+(4cm,0)$)  {AI/NLP Engine (NLTK, PyTorch)};
+\node [side] (db)       at ($(userstories.east)+(4cm,0)$) {Database (PostgreSQL/MySQL)};
+
+% Connect side components
+\path [line] (frontend.west) -- (elicitation.east);
+\path [line] (backend.west)  -- (quality.east);
+\path [line] (ai.west)       -- (refinement.east);
+\path [line] (db.west)       -- (userstories.east);
+
+\end{tikzpicture}
+\caption{Pipe-and-Filter System Architecture of MARS}
+\label{fig:architecture}
+\end{figure}

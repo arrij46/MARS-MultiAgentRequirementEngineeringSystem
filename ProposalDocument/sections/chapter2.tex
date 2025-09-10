@@ -48,7 +48,15 @@ This module automates the creation of a Software Requirement Specification (SRS)
     \item Offers real-time chatbot-assisted editing and refinement of the document.  
     \item Exports the finalized SRS into multiple formats such as PDF, DOCX, and Markdown.  
 \end{enumerate}
+\section{System Architecture}
+\input{ThesisFigs/ArchitectureDiagram}
+The architecture of the proposed system follows a \textbf{pipe-and-filter model}, where each stage of the requirement engineering process is represented as a modular component connected in sequence. User input flows through a series of processing stages, with the output of one stage serving as the input for the next. This ensures that requirements are progressively refined, validated, and transformed into structured artifacts such as user stories and SRS documents.
 
+At the entry point, users interact with the system through a \textbf{frontend web application}, implemented in React.js, which provides both text-based input and document upload options. The frontend connects to the \textbf{backend services}, developed in Python (Flask/FastAPI/Django), responsible for orchestrating workflows and exposing APIs. Core intelligence is handled by the \textbf{AI/NLP engine}, which leverages libraries such as NLTK and PyTorch to perform requirement elicitation, ambiguity detection, conflict resolution, and classification.
+
+Validated requirements and generated artifacts are stored in the \textbf{database layer} (PostgreSQL/MySQL or MongoDB for unstructured storage), ensuring persistence and traceability. The pipeline includes modules for conversational elicitation, quality assurance, refinement, user story generation, and SRS assembly, each functioning as independent but interconnected processing blocks. Additionally, the system integrates a \textbf{document processing component}, using tools like \texttt{python-docx} and Pandoc, to support export into multiple formats such as PDF, DOCX, and Markdown.
+
+This modular architecture promotes scalability, maintainability, and flexibility. For example, improvements to the AI models or integration of new document templates can be performed without affecting the entire system. By adopting the pipe-and-filter design, the architecture ensures that requirements flow in a structured manner from raw input to finalized documentation while maintaining opportunities for human-in-the-loop interaction and feedback.
 \section{Tools and Technologies}
 
 \subsection*{Frontend (Web Application Interface)}
