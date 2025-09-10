@@ -1,0 +1,115 @@
+\chapter{Project Description}
+\label{ch:description}
+\section{Scope} 
+\vspace{-1.18cm} 
+The scope of this project is to design and implement an AI-assisted system that supports requirement elicitation, quality assessment, refinement, and partial automation of the Software Requirement Specification (SRS) document. The system will accept user input in text form or document upload, limited to English, and provide a chatbot-based interface to enable natural and guided elicitation of requirements. It will generate context-aware clarifying questions to resolve ambiguities and missing details through iterative interaction with users. Drafted requirements will be automatically analyzed for duplication, conflicts, and classification, with the system suggesting corrections where possible and escalating complex issues to users through human-in-the-loop support. The system will further automate the creation of a partially complete SRS, covering introduction, audience, scope, product perspective, functional and non-functional requirements, glossary, and user classes. Users will be able to select templates, refine sections, and add new requirements with chatbot assistance. Additionally, finalized requirements will be transformed into structured user stories to support agile development processes. However, the scope excludes functionalities such as software coding, testing, graphical modeling, or generating diagrams. It will not support multiple projects simultaneously or collaborative editing, and users will retain full responsibility for final review and validation. The system also does not address hardware or architectural constraints that may impact performance. By focusing specifically on elicitation, refinement, and structured documentation, the project establishes clear boundaries and ensures that users receive AI-driven support for requirement engineering without extending into development or operational activities.
+
+\section{Modules}
+The proposed system is divided into the following key modules, each addressing a specific phase of the requirement engineering process and collectively contributing to the automated generation of high-quality software requirement specifications.
+
+\subsection{Conversational Requirement Elicitation \& Drafting Module}
+This module enables users to interact with the web application through an AI-assisted conversational chatbot designed for requirement elicitation. The system engages users in iterative dialogue, asking clarifying questions to resolve ambiguities and ensure completeness. User-provided inputs are then organized into a preliminary structured format that serves as the foundation for subsequent refinement and validation.  
+\begin{enumerate} 
+    \item Provides an interactive conversational assistant to guide the elicitation process.  
+    \item Generates clarifying questions to capture precise and complete requirements. 
+    \item Accepts both free text inputs and structured lists of requirements.  
+    \item Produces an initial structured draft of requirements for further refinement.  
+\end{enumerate}
+
+\subsection{Requirement Quality Assurance Module}
+This module ensures the clarity, consistency, and accuracy of drafted requirements by applying automated quality checks. The system identifies issues such as ambiguity, lack of atomicity, duplication, and logical conflicts, and suggests corrective actions to improve the overall reliability of the requirements.  
+\begin{enumerate}
+    \item Enforces atomicity by breaking down complex requirements into simpler, precise statements.  
+    \item Detects duplicate and conflicting requirements for resolution.  
+    \item Highlights conflicting or incomplete requirements for user clarification.  
+\end{enumerate}
+
+\subsection{Requirement Refinement \& Categorization Module}
+This module further enhances validated requirements by refining their structure and categorizing them into appropriate groups. Functional and non-functional requirements are distinctly identified to support systematic documentation and traceability. Any conflicts that cannot be automatically resolved are logged for later human verification.  
+\begin{enumerate}
+    \item Automatically classifies requirements into functional and non-functional categories.    
+    \item Provides a categorized view of requirements for improved organization and accessibility.  
+    \item Refines requirement phrasing and maintains a record of unresolved conflicts for human review.  
+\end{enumerate}
+
+\subsection{User Story Generation Module}
+This module bridges the gap between requirements engineering and agile development by converting validated requirements into structured user stories. Each user story is enriched with essential elements such as a title, description, and acceptance criteria, ensuring clarity and alignment with agile practices.  
+\begin{enumerate}
+    \item Generates user stories with structured elements (title, description, acceptance criteria).  
+    \item Cost and risk analysis of user stories using the project input elicited during the elicitation phase.
+    \item Prioritization of user stories to aid in sprint planning and resource allocation.  
+\end{enumerate}
+
+\subsection{SRS Document Generation \& Editing Module}
+This module automates the creation of a Software Requirement Specification (SRS) document, integrating all validated requirements, user stories, and glossary terms into a coherent format. The system adheres to IEEE standards while also supporting user-provided templates for customization. Users can refine the document interactively with chatbot assistance and export it in multiple formats for practical use.  
+\begin{enumerate}
+    \item Assembles an editable SRS document including introduction, scope, functional and non-functional requirements, and glossary.  
+    \item Adheres to IEEE standards while supporting customizable templates provided by the user.  
+    \item Offers real-time chatbot-assisted editing and refinement of the document.  
+    \item Exports the finalized SRS into multiple formats such as PDF, DOCX, and Markdown.  
+\end{enumerate}
+
+\section{Tools and Technologies}
+
+\subsection*{Frontend (Web Application Interface)}
+\begin{itemize}
+    \item React.js  
+    \item HTML5, CSS3, JavaScript 
+    \item Bootstrap  
+\end{itemize}
+
+\subsection*{Backend (Application Logic and APIs)}
+\begin{itemize}
+    \item Python (Flask/FastAPI/Django)
+    \item Node.js (optional)
+\end{itemize}
+
+\subsection*{AI/ML and NLP Technologies}
+\begin{itemize}
+    \item NLTK 
+    \item PyTorch 
+\end{itemize}
+
+\subsection*{Database and Storage}
+\begin{itemize}
+    \item PostgreSQL / MySQL 
+    \item MongoDB (optional) 
+    \item File Storage 
+\end{itemize}
+
+\subsection*{Document Processing \& Export}
+\begin{itemize}
+    \item python-docx 
+    \item Pandoc 
+\end{itemize}
+
+\section{Work Division}
+For each module and respective Feature, assign responsibility to a team member
+
+\begin{table}[!ht]
+\caption{Table 1}
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{2cm}|p{9cm}|}
+\hline
+\textbf{Name} & \textbf{Registration} & \textbf{Responsibility / Module / Featureure} \\ \hline
+Mr. Zubair & 22i-2475 & Module 1- Feature 1, Module 2- Feature 1, Module 3- Feature 1, Module 4- Feature 2, Module 5- Feature 3  \\ \hline  
+Miss. Arrij & 22i-0755 & Module 1- Feature 2-3, Module 2- Feature 1, Module 3- Feature 2, Module 4- Feature 1, Module 5- Feature 4  \\ \hline  
+Miss. Hamna & 22i-1098 & Module 1- Feature 4, Module 2- Feature 3, Module 3- Feature 3, Module 4- Feature 3, Module 5- Feature 2 \\ \hline
+Team & - & Module 1- Feature 1, Module 2- Feature 2, Module 5- Feature 1   \\ \hline  
+\end{tabular}
+\end{table}
+
+
+\section{TimeLine}
+
+\begin{table}[!ht]
+\caption{Project Iteration Plan} 
+\begin{tabular}{|c|c|p{9cm}|} \hline
+\textbf{Iteration \#} & \textbf{Time Frame} & \textbf{Tasks / Modules} \\ \hline
+01 & Sept–Oct & Development of Conflict and Duplicate Detection Model, including data preprocessing and validation. \\ \hline
+02 & Nov–Dec  & Implementation of Ambiguity Detection, Requirement Classification, and Refinement mechanisms. \\ \hline
+03 & Jan–Feb  & Conversational Requirement Elicitation and Automated User Story Generation. \\ \hline
+04 & Mar–Apr  & Integration of SRS Editor, Chatbot Interface, Requirement Filtering, and Preliminary Cost–Risk Analysis. \\ \hline
+\end{tabular}
+\end{table}
